@@ -97,8 +97,8 @@ echo "======================================================"
 echo
 
 # --- Prompt for U5G Credentials ---
-read -p "U5G SSH username [pronetadv]: " U5G_USER
-U5G_USER="${U5G_USER:-pronetadv}"
+read -p "U5G SSH username [avfxu5g]: " U5G_USER
+U5G_USER="${U5G_USER:-avfxu5g}"
 read -s -p "U5G SSH password: " U5G_PASS
 echo
 if [ -z "${U5G_PASS}" ]; then
