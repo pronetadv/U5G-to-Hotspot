@@ -1,0 +1,7 @@
+*.log
+*.bat
+*.command
+*.conf
+__pycache__/
+.DS_Store
+Thumbs.db
