@@ -14,7 +14,7 @@ sudo bash setup_u5g_cellular_wan.sh --wifi # revert to WiFi WAN
 - Windows 11 + WSL2 with [mirrored networking](https://learn.microsoft.com/en-us/windows/wsl/networking)
 - `sshpass` installed in WSL (`sudo apt install sshpass`)
 - Laptop Ethernet port set to `192.168.1.1/24` (the port connected to the U5G)
-- U5G at `192.168.1.20` (script prompts for SSH credentials at runtime)
+- U5G at `192.168.1.20` (script prompts for SSH credentials; default user: `avfxu5g`)
 
 ## How It Works
 
