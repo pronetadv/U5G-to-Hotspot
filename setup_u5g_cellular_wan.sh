@@ -31,15 +31,11 @@ set -euo pipefail
 
 # --- Configuration ---
 U5G_IP="192.168.1.20"
-U5G_USER="pronetadv"
-U5G_PASS="pronet21"
 CELLULAR_IFACE="rmnet_data0"
 CELLULAR_GW="192.0.0.2"
 LAN_SUBNET="192.168.1.0/24"
 REQUIRED_GW="192.168.1.20"
 TEST_IP="1.1.1.1"
-SSHPASS_CMD="sshpass -p ${U5G_PASS}"
-SSH_CMD="${SSHPASS_CMD} ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 ${U5G_USER}@${U5G_IP}"
 
 # --- Colors ---
 RED='\033[0;31m'
@@ -98,6 +94,21 @@ fi
 echo "======================================================"
 echo "  U5G Cellular/WiFi WAN Gateway Setup"
 echo "======================================================"
+echo
+
+# --- Prompt for U5G Credentials ---
+read -p "U5G SSH username [pronetadv]: " U5G_USER
+U5G_USER="${U5G_USER:-pronetadv}"
+read -s -p "U5G SSH password: " U5G_PASS
+echo
+if [ -z "${U5G_PASS}" ]; then
+    fail "Password cannot be empty."
+    exit 1
+fi
+
+SSHPASS_CMD="sshpass -p ${U5G_PASS}"
+SSH_CMD="${SSHPASS_CMD} ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 ${U5G_USER}@${U5G_IP}"
+
 echo
 
 # --- Prerequisite Checks ---
