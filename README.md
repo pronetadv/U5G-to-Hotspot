@@ -40,4 +40,3 @@ The script configures the U5G with NAT, IP forwarding, and a policy route (table
 ## Switching Modes
 
 - **Cellular WAN** — traffic routes through the U5G's 5G modem (NAT'd)
-- **WiFi WAN** — traffic passes through to Windows via Ethernet (default)
